@@ -1,4 +1,5 @@
 GEM
+  remote: https://rubygems.org/
   specs:
     childprocess (0.5.5)
       ffi (~> 1.0, >= 1.0.11)
@@ -22,4 +23,5 @@ PLATFORMS
 DEPENDENCIES
   minitest
   rake
+  selenium-webdriver
   watir-webdriver

@@ -6,12 +6,36 @@ require 'helpers/base_checkout_helper'
 require 'helpers/standard_checkout_helper'
 require 'helpers/guest_checkout_helper'
 require 'helpers/gift_card_helper'
+
+include Selenium
  
 class NibleyTest < Minitest::Test
   attr_reader :browser
 
   def setup 
-    @browser ||= Watir::Browser.new :firefox
+    #@browser ||= Watir::Browser.new :firefox
+    
+    caps = WebDriver::Remote::Capabilities.new
+    caps[:name] = "Watir WebDriver"
+    
+    # IE 10 on windows 8
+    # caps['browser'] = 'IE'
+    # caps['browser_version'] = '10.0'
+    # caps['os'] = 'Windows'
+    # caps['os_version'] = '8'
+    # caps['resolution'] = '1024x768'
+    # caps["browserstack.debug"] = "true"
+    # caps['browserstack.local'] = "true"
+    
+    # iphone 5
+    caps[:browserName] = 'iPhone'
+    caps[:platform] = 'MAC'
+    caps[:device] = 'iPhone 5'
+    caps['browserstack.debug'] = "true"
+    caps['browserstack.local'] = "true"
+
+    @browser ||= Watir::Browser.new(:remote, :url => "http://MatthewRedd:SPcNqvdg4Kd4qvjp294S@hub.browserstack.com/wd/hub", :desired_capabilities => caps)
+    
   end
    
   def teardown 
