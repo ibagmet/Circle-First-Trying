@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CouponsTest < NibleyTest
 
-	def test_coupons_failure_cases
+  def test_coupons_failure_cases
     goto '/login'
     browser.text_field(name: "spree_user[email]").set 'ibagmet@deseretbook.com'
     browser.text_field(name: "spree_user[password]").set 'test123'
@@ -58,7 +58,7 @@ class CouponsTest < NibleyTest
     goto '/cart'
     browser.input(class: "btn btn-sm btn-link-plain").click
     logout
-	end
+  end
 
-	end
+  end
  

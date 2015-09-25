@@ -62,7 +62,7 @@ class LoginAndCheckoutTest < NibleyTest
       payment_type: [:gift_card, :gift_card, :gift_card, :credit_card]
     )
   end
-
+ 
   # check out with multiple gift cards but no credit cards.
   def test_checkout_with_multiple_gift_cards
     puts "test_checkout_with_multiple_gift_cards"
